@@ -43,7 +43,7 @@ let prepend = (list, value) => {
   return newList;
 };
 
-
+//iterative nth
 let nth = (list, number) => {
   let i = 0;
   while(i <= number){
