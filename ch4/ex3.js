@@ -52,7 +52,18 @@ let nth = (list, number) => {
     else { return undefined; }
   }
 };
+
  //recursive nth
+let nth = (list, number, i) => {
+  i = i || 0;
+  if(i === number){ return list.value; }
+
+  if(list.rest){ list = list.rest; }
+  else { return undefined; }
+
+  return nth(list, number, i+=1);
+};
+
 
 module.exports.arrayToList = arrayToList;
 module.exports.listToArray = listToArray;
