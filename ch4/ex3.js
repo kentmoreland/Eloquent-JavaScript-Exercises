@@ -44,14 +44,14 @@ let prepend = (list, value) => {
 };
 
 //iterative nth
-let nth = (list, number) => {
-  let i = 0;
-  while(i <= number){
-    if(number === i){ return list.value; }
-    if(list.rest){ list = list.rest; i++; }
-    else { return undefined; }
-  }
-};
+// let nth = (list, number) => {
+//   let i = 0;
+//   while(i <= number){
+//     if(number === i){ return list.value; }
+//     if(list.rest){ list = list.rest; i++; }
+//     else { return undefined; }
+//   }
+// };
 
  //recursive nth
 let nth = (list, number, i) => {

@@ -1,9 +1,11 @@
 const expect = require('chai').expect;
 const list = require('../ch4/ex3');
+const eq = require('../ch4/ex4');
 let arrayToList = list.arrayToList;
 let listToArray = list.listToArray;
 let prepend = list.prepend;
 let nth = list.nth;
+let deepEqual = eq.deepEqual;
 
 describe('ex3', () => {
   describe('arrayToList', () => {
@@ -72,8 +74,27 @@ describe('ex3', () => {
     });
 
   });
-
-
-
-
 });
+
+
+  describe('ex4', () => {
+    let obj = {here: {is: "an"}, object: 2};
+
+    describe('deepEqual', () => {
+
+      it('should be a function', () => {
+        expect(deepEqual).to.be.a('function');
+      });
+
+      it('should return a boolean', () => {
+        expect(deepEqual(obj, obj)).to.be.a('boolean');
+      });
+
+      it('should determine deep equality', () => {
+        expect(deepEqual(obj, obj)).to.be.true;
+        expect(deepEqual(obj, {test: 'test'})).to.be.false;
+      });
+
+    });
+  });
+
